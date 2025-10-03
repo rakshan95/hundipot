@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Edit3, Trash2, Search, Filter, MoreVertical, FileText, Download } from 'lucide-react';
+import { CreditCard as Edit3, Trash2, Search, Filter, MoreVertical, FileText, Download } from 'lucide-react';
 import { Expense } from '../types/expense';
 import { formatCurrency, formatDate } from '../utils/dateUtils';
 
