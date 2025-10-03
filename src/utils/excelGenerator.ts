@@ -26,7 +26,7 @@ export const generateExcelReport = (reportData: ReportData): void => {
 
   // Summary Sheet
   const summaryData = [
-    ['GoGo Expense Tracker - Financial Report'],
+    ['HundiPot Expense Tracker - Financial Report'],
     [''],
     ['Report Period:', `${reportData.startDate} to ${reportData.endDate}`],
     ['Generated:', new Date().toLocaleDateString()],
@@ -144,7 +144,7 @@ export const generateExcelReport = (reportData: ReportData): void => {
   }
 
   // Generate filename
-  const fileName = `gogo-financial-report-${reportData.period}-${new Date().toISOString().split('T')[0]}.xlsx`;
+  const fileName = `hundipot-financial-report-${reportData.period}-${new Date().toISOString().split('T')[0]}.xlsx`;
 
   // Write and download the file
   XLSX.writeFile(workbook, fileName);

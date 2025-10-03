@@ -38,7 +38,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionChange,
       
       {/* Navigation sidebar */}
       <nav className={`
-        bg-white shadow-sm border-r border-pink-100 min-h-screen w-64 
+        bg-white shadow-sm border-r border-blue-100 min-h-screen w-64
         fixed lg:static inset-y-0 left-0 z-50 transform transition-transform duration-300 ease-in-out
         ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
       `}>
@@ -67,8 +67,8 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionChange,
                   onClick={() => handleSectionChange(item.id)}
                   className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200 ${
                     isActive
-                      ? 'bg-gradient-to-r from-[#FE4066] to-pink-500 text-white shadow-lg'
-                      : 'text-gray-700 hover:bg-pink-50 hover:text-[#FE4066]'
+                      ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg'
+                      : 'text-gray-700 hover:bg-blue-50 hover:text-blue-600'
                   }`}
                 >
                   <Icon className={`w-5 h-5 ${isActive ? 'text-white' : 'text-gray-500'}`} />

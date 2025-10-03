@@ -62,7 +62,7 @@ const Reports: React.FC<ReportsProps> = ({ expenses, funding }) => {
     }, {} as Record<string, number>);
 
     const reportData = {
-      title: `GoGo Financial Report - ${filter.type.charAt(0).toUpperCase() + filter.type.slice(1)}`,
+      title: `HundiPot Financial Report - ${filter.type.charAt(0).toUpperCase() + filter.type.slice(1)}`,
       period: filter.type,
       startDate: start.toISOString().split('T')[0],
       endDate: end.toISOString().split('T')[0],
@@ -85,18 +85,18 @@ const Reports: React.FC<ReportsProps> = ({ expenses, funding }) => {
 
   return (
     <div className="p-4 lg:p-6 space-y-6">
-      <div className="bg-white rounded-xl shadow-sm border border-pink-100 p-4 lg:p-6">
+      <div className="bg-white rounded-xl shadow-sm border border-blue-100 p-4 lg:p-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 space-y-4 sm:space-y-0">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-r from-rose-500 to-pink-500 rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
               <FileText className="w-6 h-6 text-white" />
             </div>
             <h2 className="text-xl lg:text-2xl font-bold text-gray-900">Financial Reports</h2>
           </div>
-          
+
           <button
             onClick={downloadReport}
-            className="flex items-center justify-center space-x-2 bg-gradient-to-r from-[#FE4066] to-pink-500 text-white px-4 py-2 rounded-lg hover:from-[#E5396B] hover:to-pink-600 transition-all shadow-lg hover:shadow-xl w-full sm:w-auto"
+            className="flex items-center justify-center space-x-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all shadow-lg hover:shadow-xl w-full sm:w-auto"
           >
             <Download className="w-4 h-4" />
             <span>Download Report</span>
@@ -111,8 +111,8 @@ const Reports: React.FC<ReportsProps> = ({ expenses, funding }) => {
               onClick={() => setFilter({ type: type as ReportFilter['type'] })}
               className={`p-3 lg:p-4 rounded-lg border-2 transition-all capitalize ${
                 filter.type === type
-                  ? 'border-[#FE4066] bg-pink-50 text-[#FE4066]'
-                  : 'border-gray-200 hover:border-pink-300 hover:bg-pink-25'
+                  ? 'border-blue-600 bg-blue-50 text-blue-600'
+                  : 'border-gray-200 hover:border-blue-300 hover:bg-blue-25'
               }`}
             >
               <Calendar className="w-4 h-4 lg:w-5 lg:h-5 mx-auto mb-2" />
@@ -123,14 +123,14 @@ const Reports: React.FC<ReportsProps> = ({ expenses, funding }) => {
 
         {/* Custom Date Range */}
         {filter.type === 'custom' && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 p-4 bg-pink-50 rounded-lg">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 p-4 bg-blue-50 rounded-lg">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Start Date</label>
               <input
                 type="date"
                 value={customStartDate}
                 onChange={(e) => setCustomStartDate(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
             <div>
@@ -139,7 +139,7 @@ const Reports: React.FC<ReportsProps> = ({ expenses, funding }) => {
                 type="date"
                 value={customEndDate}
                 onChange={(e) => setCustomEndDate(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
           </div>
@@ -148,27 +148,27 @@ const Reports: React.FC<ReportsProps> = ({ expenses, funding }) => {
 
       {/* Summary Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-6">
-        <div className="bg-white rounded-xl shadow-sm border border-pink-100 p-4 lg:p-6">
+        <div className="bg-white rounded-xl shadow-sm border border-blue-100 p-4 lg:p-6">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-medium text-gray-600">Total Expenses</p>
               <p className="text-2xl lg:text-3xl font-bold text-gray-900">{filteredExpenses.length}</p>
             </div>
-            <TrendingUp className="w-6 h-6 lg:w-8 lg:h-8 text-rose-500" />
+            <TrendingUp className="w-6 h-6 lg:w-8 lg:h-8 text-blue-500" />
           </div>
         </div>
 
-        <div className="bg-white rounded-xl shadow-sm border border-pink-100 p-4 lg:p-6">
+        <div className="bg-white rounded-xl shadow-sm border border-blue-100 p-4 lg:p-6">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-medium text-gray-600">Total Amount</p>
               <p className="text-2xl lg:text-3xl font-bold text-gray-900">{formatCurrency(totalAmount)}</p>
             </div>
-            <div className="w-6 h-6 lg:w-8 lg:h-8 text-pink-500 text-xl lg:text-2xl font-bold flex items-center justify-center">₹</div>
+            <div className="w-6 h-6 lg:w-8 lg:h-8 text-blue-500 text-xl lg:text-2xl font-bold flex items-center justify-center">₹</div>
           </div>
         </div>
 
-        <div className="bg-white rounded-xl shadow-sm border border-pink-100 p-4 lg:p-6">
+        <div className="bg-white rounded-xl shadow-sm border border-blue-100 p-4 lg:p-6">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-medium text-gray-600">Total GST</p>
@@ -178,7 +178,7 @@ const Reports: React.FC<ReportsProps> = ({ expenses, funding }) => {
           </div>
         </div>
         
-        <div className="bg-white rounded-xl shadow-sm border border-pink-100 p-4 lg:p-6">
+        <div className="bg-white rounded-xl shadow-sm border border-blue-100 p-4 lg:p-6">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-medium text-gray-600">Average Expense</p>
@@ -186,11 +186,11 @@ const Reports: React.FC<ReportsProps> = ({ expenses, funding }) => {
                 {formatCurrency(totalAmount / (filteredExpenses.length || 1))}
               </p>
             </div>
-            <PieChart className="w-6 h-6 lg:w-8 lg:h-8 text-purple-500" />
+            <PieChart className="w-6 h-6 lg:w-8 lg:h-8 text-blue-500" />
           </div>
         </div>
 
-        <div className="bg-white rounded-xl shadow-sm border border-pink-100 p-4 lg:p-6">
+        <div className="bg-white rounded-xl shadow-sm border border-blue-100 p-4 lg:p-6">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-medium text-gray-600">Total Funding</p>
@@ -244,9 +244,9 @@ const Reports: React.FC<ReportsProps> = ({ expenses, funding }) => {
                 <div key={type} className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
                   <div className="w-full sm:w-24 text-sm font-medium text-gray-600 truncate">{type}</div>
                   <div className="flex-1">
-                    <div className="bg-pink-50 rounded-full h-3 overflow-hidden">
-                      <div 
-                        className="h-full bg-gradient-to-r from-[#FE4066] to-pink-500 rounded-full transition-all duration-500"
+                    <div className="bg-blue-50 rounded-full h-3 overflow-hidden">
+                      <div
+                        className="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full transition-all duration-500"
                         style={{ width: `${percentage}%` }}
                       />
                     </div>
@@ -266,13 +266,13 @@ const Reports: React.FC<ReportsProps> = ({ expenses, funding }) => {
       {/* Detailed Expense List */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Detailed Expense List */}
-        <div className="bg-white rounded-xl shadow-sm border border-pink-100 p-4 lg:p-6">
+        <div className="bg-white rounded-xl shadow-sm border border-blue-100 p-4 lg:p-6">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">Detailed Expense List</h3>
           <div className="space-y-3">
             {filteredExpenses.map((expense) => (
-              <div key={expense.id} className="flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-pink-50 transition-colors space-y-2 sm:space-y-0">
+              <div key={expense.id} className="flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors space-y-2 sm:space-y-0">
                 <div className="flex items-center space-x-4 flex-1">
-                  <div className={`w-3 h-3 rounded-full ${expense.isRecurring ? 'bg-purple-500' : 'bg-gray-400'}`} />
+                  <div className={`w-3 h-3 rounded-full ${expense.isRecurring ? 'bg-blue-500' : 'bg-gray-400'}`} />
                   <div>
                     <p className="font-medium text-gray-900">{expense.name}</p>
                     <p className="text-sm text-gray-600">{expense.type} • {formatDate(expense.date)}</p>
@@ -296,7 +296,7 @@ const Reports: React.FC<ReportsProps> = ({ expenses, funding }) => {
         </div>
 
         {/* Detailed Funding List */}
-        <div className="bg-white rounded-xl shadow-sm border border-pink-100 p-4 lg:p-6">
+        <div className="bg-white rounded-xl shadow-sm border border-blue-100 p-4 lg:p-6">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">Detailed Funding List</h3>
           <div className="space-y-3">
             {filteredFunding.map((fund) => (

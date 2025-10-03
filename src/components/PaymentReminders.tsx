@@ -112,9 +112,9 @@ const PaymentReminders: React.FC<PaymentRemindersProps> = ({
 
   return (
     <div className="p-6 space-y-6">
-      <div className="bg-white rounded-xl shadow-sm border border-pink-100 p-6">
+      <div className="bg-white rounded-xl shadow-sm border border-blue-100 p-6">
         <div className="flex items-center space-x-3 mb-6">
-          <div className="w-10 h-10 bg-gradient-to-r from-[#FE4066] to-pink-500 rounded-lg flex items-center justify-center">
+          <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
             <Bell className="w-6 h-6 text-white" />
           </div>
           <h2 className="text-2xl font-bold text-gray-900">Payment Reminders</h2>

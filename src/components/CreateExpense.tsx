@@ -135,9 +135,9 @@ const CreateExpense: React.FC<CreateExpenseProps> = ({
   return (
     <div className="p-4 lg:p-6">
       <div className="max-w-2xl mx-auto">
-        <div className="bg-white rounded-xl shadow-sm border border-pink-100 p-4 lg:p-8">
+        <div className="bg-white rounded-xl shadow-sm border border-blue-100 p-4 lg:p-8">
           <div className="flex items-center space-x-3 mb-6">
-            <div className="w-10 h-10 bg-gradient-to-r from-[#FE4066] to-pink-500 rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
               <Plus className="w-6 h-6 text-white" />
             </div>
             <h2 className="text-xl lg:text-2xl font-bold text-gray-900">
@@ -156,7 +156,7 @@ const CreateExpense: React.FC<CreateExpenseProps> = ({
                 type="date"
                 value={formData.date}
                 onChange={(e) => setFormData(prev => ({ ...prev, date: e.target.value }))}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                 required
               />
             </div>
@@ -170,7 +170,7 @@ const CreateExpense: React.FC<CreateExpenseProps> = ({
               <select
                 value={formData.type}
                 onChange={(e) => setFormData(prev => ({ ...prev, type: e.target.value }))}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                 required
               >
                 <option value="">Select expense type...</option>
@@ -192,7 +192,7 @@ const CreateExpense: React.FC<CreateExpenseProps> = ({
                 value={formData.name}
                 onChange={(e) => handleNameChange(e.target.value)}
                 placeholder="Enter expense name..."
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                 required
               />
             </div>
@@ -209,7 +209,7 @@ const CreateExpense: React.FC<CreateExpenseProps> = ({
                 value={formData.amount}
                 onChange={(e) => setFormData(prev => ({ ...prev, amount: e.target.value }))}
                 placeholder="0.00"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                 required
               />
             </div>
@@ -226,7 +226,7 @@ const CreateExpense: React.FC<CreateExpenseProps> = ({
                       gstApplicable: e.target.checked,
                       gstAmount: e.target.checked ? prev.gstAmount : ''
                     }))}
-                    className="w-5 h-5 text-pink-600 border-gray-300 rounded focus:ring-pink-500"
+                    className="w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                   />
                   <span className="text-sm font-medium text-gray-700">GST Applicable</span>
                 </label>
@@ -244,7 +244,7 @@ const CreateExpense: React.FC<CreateExpenseProps> = ({
                     value={formData.gstAmount}
                     onChange={(e) => setFormData(prev => ({ ...prev, gstAmount: e.target.value }))}
                     placeholder="0.00"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                   />
                 </div>
               )}
@@ -275,7 +275,7 @@ const CreateExpense: React.FC<CreateExpenseProps> = ({
                   type="date"
                   value={formData.dueDate}
                   onChange={(e) => setFormData(prev => ({ ...prev, dueDate: e.target.value }))}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                 />
               </div>
             )}
@@ -290,7 +290,7 @@ const CreateExpense: React.FC<CreateExpenseProps> = ({
               </label>
               <div className="space-y-4">
                 <div className="flex items-center justify-center w-full">
-                  <label className="flex flex-col items-center justify-center w-full h-24 sm:h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-pink-25 hover:border-[#FE4066] transition-all">
+                  <label className="flex flex-col items-center justify-center w-full h-24 sm:h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-blue-50 hover:border-blue-500 transition-all">
                     <div className="flex flex-col items-center justify-center pt-5 pb-6">
                       <Upload className="w-6 h-6 sm:w-8 sm:h-8 mb-2 sm:mb-4 text-gray-500" />
                       <p className="mb-2 text-xs sm:text-sm text-gray-500 text-center px-2">
@@ -313,7 +313,7 @@ const CreateExpense: React.FC<CreateExpenseProps> = ({
                   <div className="space-y-2">
                     <p className="text-sm font-medium text-gray-700">Uploaded Files:</p>
                     {attachments.map((attachment) => (
-                      <div key={attachment.id} className="flex flex-col sm:flex-row sm:items-center justify-between p-3 bg-pink-50 rounded-lg border border-pink-200 space-y-2 sm:space-y-0">
+                      <div key={attachment.id} className="flex flex-col sm:flex-row sm:items-center justify-between p-3 bg-blue-50 rounded-lg border border-blue-200 space-y-2 sm:space-y-0">
                         <div className="flex items-center space-x-3">
                           <span className="text-lg">{getFileIcon(attachment.type)}</span>
                           <div>
@@ -330,7 +330,7 @@ const CreateExpense: React.FC<CreateExpenseProps> = ({
                               link.download = attachment.name;
                               link.click();
                             }}
-                            className="p-1 text-gray-400 hover:text-[#FE4066] transition-colors"
+                            className="p-1 text-gray-400 hover:text-blue-600 transition-colors"
                             title="Download attachment"
                           >
                             <Download className="w-4 h-4" />
@@ -355,7 +355,7 @@ const CreateExpense: React.FC<CreateExpenseProps> = ({
             <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
               <button
                 type="submit"
-                className="w-full sm:flex-1 bg-gradient-to-r from-[#FE4066] to-pink-500 text-white py-3 px-6 rounded-lg font-medium hover:from-[#E5396B] hover:to-pink-600 focus:ring-4 focus:ring-pink-200 transition-all duration-200 shadow-lg hover:shadow-xl"
+                className="w-full sm:flex-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:from-blue-600 hover:to-blue-700 focus:ring-4 focus:ring-blue-200 transition-all duration-200 shadow-lg hover:shadow-xl"
               >
                 {editingExpense ? 'Update Expense' : 'Create Expense'}
               </button>

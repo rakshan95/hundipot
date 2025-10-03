@@ -172,9 +172,9 @@ function App() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-pink-25 to-rose-50 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-sky-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="w-16 h-16 border-4 border-[#FE4066] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <div className="w-16 h-16 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
           <p className="text-gray-600">Loading your data...</p>
         </div>
       </div>
@@ -251,7 +251,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-25 to-rose-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-sky-50">
       <Header 
         currentSection={sectionTitles[activeSection as keyof typeof sectionTitles]} 
         onMenuToggle={toggleMobileMenu}

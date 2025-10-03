@@ -133,7 +133,7 @@ export default function CreateFunding({ onAddFunding, onCancelEdit, editingFundi
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              <DollarSign className="w-4 h-4 inline mr-2" />
+              <span className="inline-block w-4 h-4 mr-2 text-base font-bold">₹</span>
               Amount (₹) *
             </label>
             <input

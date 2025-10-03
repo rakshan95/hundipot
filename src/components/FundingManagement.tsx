@@ -53,7 +53,7 @@ const FundingManagement: React.FC<FundingManagementProps> = ({
 
   return (
     <div className="p-6 space-y-6">
-      <div className="bg-white rounded-xl shadow-sm border border-pink-100 p-6">
+      <div className="bg-white rounded-xl shadow-sm border border-blue-100 p-6">
         <h2 className="text-2xl font-bold text-gray-900 mb-6">Funding Management</h2>
         
         {/* Search and Filters */}
@@ -65,7 +65,7 @@ const FundingManagement: React.FC<FundingManagementProps> = ({
               placeholder="Search funding..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all"
+              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
             />
           </div>
           
@@ -109,7 +109,7 @@ const FundingManagement: React.FC<FundingManagementProps> = ({
             </thead>
             <tbody>
               {filteredFunding.map((fund) => (
-                <tr key={fund.id} className="border-b border-gray-100 hover:bg-pink-25 transition-colors">
+                <tr key={fund.id} className="border-b border-gray-100 hover:bg-blue-50 transition-colors">
                   <td className="py-4 px-4 text-gray-900">{formatDate(fund.receivedDate)}</td>
                   <td className="py-4 px-4">
                     <div className="flex items-center space-x-2">
@@ -156,7 +156,7 @@ const FundingManagement: React.FC<FundingManagementProps> = ({
                             <button
                               key={attachment.id}
                               onClick={() => downloadAttachment(attachment)}
-                              className="p-1 text-gray-400 hover:text-[#FE4066] transition-colors"
+                              className="p-1 text-gray-400 hover:text-blue-600 transition-colors"
                               title={`Download ${attachment.name}`}
                             >
                               <Download className="w-3 h-3" />
@@ -172,7 +172,7 @@ const FundingManagement: React.FC<FundingManagementProps> = ({
                     <div className="flex items-center space-x-2">
                       <button
                         onClick={() => onEditFunding(fund)}
-                        className="p-2 text-gray-400 hover:text-[#FE4066] hover:bg-pink-50 rounded-lg transition-all"
+                        className="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all"
                         title="Edit funding"
                       >
                         <Edit3 className="w-4 h-4" />
@@ -202,7 +202,7 @@ const FundingManagement: React.FC<FundingManagementProps> = ({
         </div>
 
         {/* Summary */}
-        <div className="mt-6 p-4 bg-pink-50 rounded-lg">
+        <div className="mt-6 p-4 bg-blue-50 rounded-lg">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
             <div>
               <p className="text-sm text-gray-600">Total Funding</p>

@@ -116,7 +116,7 @@ const Dashboard: React.FC<DashboardProps> = ({
     }, {} as Record<string, number>);
 
     const reportData = {
-      title: `GoGo Financial Report - ${type.charAt(0).toUpperCase() + type.slice(1)}`,
+      title: `HundiPot Financial Report - ${type.charAt(0).toUpperCase() + type.slice(1)}`,
       period: type,
       startDate: start.toISOString().split('T')[0],
       endDate: end.toISOString().split('T')[0],
@@ -160,8 +160,8 @@ const Dashboard: React.FC<DashboardProps> = ({
   return (
     <div className="space-y-6 p-4 lg:p-6">
       {/* KPI Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-6">
-        <div className="bg-white rounded-xl shadow-lg p-4 lg:p-6 border-l-4 border-[#FE4066]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+        <div className="bg-white rounded-xl shadow-lg p-4 lg:p-6 border-l-4 border-blue-600">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-medium text-gray-600">This Month</p>
@@ -177,34 +177,12 @@ const Dashboard: React.FC<DashboardProps> = ({
                 </span>
               </div>
             </div>
-            <div className="bg-[#FE4066] bg-opacity-10 p-2 lg:p-3 rounded-lg">
-              <div className="w-5 h-5 lg:w-6 lg:h-6 text-[#FE4066] text-base lg:text-lg font-bold flex items-center justify-center">₹</div>
+            <div className="bg-blue-100 p-2 lg:p-3 rounded-lg">
+              <div className="w-5 h-5 lg:w-6 lg:h-6 text-blue-600 text-base lg:text-lg font-bold flex items-center justify-center">₹</div>
             </div>
           </div>
         </div>
 
-        <div className="bg-white rounded-xl shadow-lg p-4 lg:p-6 border-l-4 border-green-500">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm font-medium text-gray-600">GST This Month</p>
-              <p className="text-xl lg:text-2xl font-bold text-gray-900">{formatCurrency(totalGSTCurrentMonth)}</p>
-              <div className="flex items-center mt-2">
-                {gstChange >= 0 ? (
-                  <TrendingUp className="w-4 h-4 text-red-500 mr-1" />
-                ) : (
-                  <TrendingDown className="w-4 h-4 text-green-500 mr-1" />
-                )}
-                <span className={`text-sm font-medium ${gstChange >= 0 ? 'text-red-500' : 'text-green-500'}`}>
-                  {Math.abs(gstChange).toFixed(1)}%
-                </span>
-              </div>
-            </div>
-            <div className="bg-green-100 p-2 lg:p-3 rounded-lg">
-              <div className="w-5 h-5 lg:w-6 lg:h-6 text-green-600 text-xs lg:text-sm font-bold flex items-center justify-center">GST</div>
-            </div>
-          </div>
-        </div>
-        
         <div className="bg-white rounded-xl shadow-lg p-4 lg:p-6 border-l-4 border-orange-500">
           <div className="flex items-center justify-between">
             <div>
@@ -231,15 +209,15 @@ const Dashboard: React.FC<DashboardProps> = ({
           </div>
         </div>
 
-        <div className="bg-white rounded-xl shadow-lg p-4 lg:p-6 border-l-4 border-purple-500">
+        <div className="bg-white rounded-xl shadow-lg p-4 lg:p-6 border-l-4 border-sky-600">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-medium text-gray-600">Repayable</p>
               <p className="text-xl lg:text-2xl font-bold text-gray-900">{formatCurrency(totalRepayable)}</p>
-              <p className="text-sm text-purple-600 mt-2">Outstanding</p>
+              <p className="text-sm text-sky-600 mt-2">Outstanding</p>
             </div>
-            <div className="bg-purple-100 p-2 lg:p-3 rounded-lg">
-              <ArrowUpRight className="w-5 h-5 lg:w-6 lg:h-6 text-purple-500" />
+            <div className="bg-sky-100 p-2 lg:p-3 rounded-lg">
+              <ArrowUpRight className="w-5 h-5 lg:w-6 lg:h-6 text-sky-600" />
             </div>
           </div>
         </div>
@@ -330,10 +308,10 @@ const Dashboard: React.FC<DashboardProps> = ({
             <button
               key={report.type}
               onClick={() => handleDownloadReport(report.type)}
-              className="flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-2 p-3 border border-gray-200 rounded-lg hover:border-[#FE4066] hover:bg-pink-50 transition-all group"
+              className="flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-2 p-3 border border-gray-200 rounded-lg hover:border-blue-500 hover:bg-blue-50 transition-all group"
             >
-              <Download className="w-4 h-4 text-gray-600 group-hover:text-[#FE4066]" />
-              <span className="text-xs sm:text-sm font-medium text-gray-700 group-hover:text-[#FE4066] text-center">
+              <Download className="w-4 h-4 text-gray-600 group-hover:text-blue-600" />
+              <span className="text-xs sm:text-sm font-medium text-gray-700 group-hover:text-blue-600 text-center">
                 {report.label}
               </span>
             </button>
@@ -349,7 +327,7 @@ const Dashboard: React.FC<DashboardProps> = ({
             <h3 className="text-lg font-semibold text-gray-800">Recent Expenses</h3>
             <button
               onClick={() => onNavigate('expenses')}
-              className="text-[#FE4066] hover:text-[#E11D48] text-xs sm:text-sm font-medium transition-colors"
+              className="text-blue-600 hover:text-blue-700 text-xs sm:text-sm font-medium transition-colors"
             >
               View All
             </button>
@@ -385,7 +363,7 @@ const Dashboard: React.FC<DashboardProps> = ({
             <h3 className="text-lg font-semibold text-gray-800">Recent Funding</h3>
             <button
               onClick={() => onNavigate('funding')}
-              className="text-[#FE4066] hover:text-[#E11D48] text-xs sm:text-sm font-medium transition-colors"
+              className="text-blue-600 hover:text-blue-700 text-xs sm:text-sm font-medium transition-colors"
             >
               View All
             </button>
@@ -401,7 +379,7 @@ const Dashboard: React.FC<DashboardProps> = ({
                 <div className="text-left sm:text-right">
                   <p className="font-semibold text-green-600">{formatCurrency(fund.amount)}</p>
                   {fund.isRepayable && (
-                    <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-purple-100 text-purple-800 mt-1">
+                    <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-sky-100 text-sky-800 mt-1">
                       <ArrowUpRight className="w-3 h-3 mr-1" />
                       Repayable
                     </span>
@@ -463,7 +441,7 @@ const Dashboard: React.FC<DashboardProps> = ({
                   </div>
                   <div className="flex-1 bg-gray-200 rounded-full h-3 relative overflow-hidden">
                     <div
-                      className="bg-gradient-to-r from-[#FE4066] to-pink-500 h-full rounded-full transition-all duration-500"
+                      className="bg-gradient-to-r from-blue-500 to-blue-600 h-full rounded-full transition-all duration-500"
                       style={{ width: `${percentage}%` }}
                     />
                   </div>
